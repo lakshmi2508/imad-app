@@ -6,10 +6,14 @@ var img=document.getElementById("madi");
 var marginLeft=0;
 function moveright(){
     //img.style.marginleft="0px";
-    if(marginLeft<=50){
-    marginLeft=marginLeft+10;
+    if(marginLeft<=10){
+    marginLeft=marginLeft+1;
     img.style.marginLeft=marginLeft+'px';
-    console.log(img.style.marginleft);
+    //console.log(img.style.marginleft);
+    }
+    else{
+        marginLeft=marginLeft-1;
+    img.style.marginLeft=marginLeft+'px';
     }
 }
 img.onclick=function(){
