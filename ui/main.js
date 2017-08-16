@@ -8,7 +8,7 @@ function moveright(){
     //img.style.marginleft="0px";
     if(marginLeft<=50){
     marginLeft=marginLeft+10;
-    img.style.marginleft=marginLeft+'px';
+    img.style.marginLeft=marginLeft+'px';
     console.log(img.style.marginleft);
     }
 }
