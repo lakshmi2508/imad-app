@@ -5,10 +5,10 @@ element.innerHTML="New Text";
 var img=document.getElementById("madi");
 var marginLeft=0;
 function moveright(){
-    img.style.marginleft="0px";
+    //img.style.marginleft="0px";
     if(marginLeft<=50){
     marginLeft=marginLeft+10;
-    img.style.marginleft=marginLeft+"px";
+    img.style.marginleft=marginLeft+'px';
     console.log(img.style.marginleft);
     }
 }
