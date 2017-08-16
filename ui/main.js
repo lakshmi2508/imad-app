@@ -12,6 +12,7 @@ function moveright(){
     //console.log(img.style.marginleft);
     }
     else{
+        //marginLeft=0;
         if(marginLeft>=0){
         marginLeft=marginLeft-1;
     img.style.marginRight=marginLeft+'px';
