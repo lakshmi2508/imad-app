@@ -51,8 +51,7 @@ submit.onclick=function(){
   request.onreadystatechange=function(){
     if(request.readyState===XMLHttpRequest.DONE){
         if(request.status===200){
-            var nametxt=document.getElementById('name');
-            var name=nametxt.value;
+            
             var names=request.responseText;
             names=JSON.parse(names);
             var list='';
@@ -64,6 +63,8 @@ submit.onclick=function(){
         }
     }  
   };
+  var nametxt=document.getElementById('name');
+            var name=nametxt.value;
   request.open('GET','http://lakshmi2508.imad.hasura-app.io/submit-name?name='+name,true);
   request.send(null);
 };
