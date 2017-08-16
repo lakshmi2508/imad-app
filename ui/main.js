@@ -12,10 +12,10 @@ function moveright(){
     //console.log(img.style.marginleft);
     }
     else{
-        marginLeft=img.style.marginRight;
+        //marginLeft=img.style.marginLeft;
         if(marginLeft>=0){
         marginLeft=marginLeft-5;
-    img.style.marginRight=marginLeft+'px';
+    img.style.marginLeft=marginLeft+'px';
         }
     }
 }
