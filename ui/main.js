@@ -12,8 +12,10 @@ function moveright(){
     //console.log(img.style.marginleft);
     }
     else{
+        if(margin>=0){
         marginLeft=marginLeft-1;
     img.style.marginLeft=marginLeft+'px';
+        }
     }
 }
 img.onclick=function(){
