@@ -41,5 +41,5 @@ button.onclick=function(){
     };
   //counter+=1;
   request.open('GET','http://lakshmi2508.imad.hasura-app.io/counter',true);
-  request.send(NULL);
+  request.send(null);
 };
