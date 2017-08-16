@@ -27,9 +27,19 @@ img.onclick=function(){
 var interval=setInterval(moveright,100);
 };*/
 var button=document.getElementById('counter');
-var counter=0;
+//var counter=0;
 button.onclick=function(){
-  counter+=1;
-  var span=document.getElementById('count');
-  span.innerHTML=counter.toString();
+    var request=new XMLHttpRequest();
+    request.onreadystatechange=function(){
+      if(request.readystate===XMLHttpRequest.DONE){
+          if(request.status===200){
+              var counter=request.responsetext;
+                var span=document.getElementById('count');
+                 span.innerHTML=counter.toString();
+          }
+      }  
+    };
+  //counter+=1;
+  request.open('GET','http://lakshmi2508.imad.hasura-app.io/counter',true);
+  request.send(NULL);
 };
