@@ -26,10 +26,10 @@ function moveright(){
 img.onclick=function(){
 var interval=setInterval(moveright,100);
 };*/
-var button=document.getElementById("counter");
+var button=document.getElementById('counter');
 var counter=0;
 button.onclick=function(){
   counter+=1;
-  var span=document.getElementById("count");
+  var span=document.getElementById('count');
   span.innerHTML=counter.toString();
 };
