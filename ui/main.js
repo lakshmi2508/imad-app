@@ -5,7 +5,7 @@ element.innerHTML="New Text";
 var img=document.getElementById("madi");
 var marginleft=0;
 function moveright(){
-    while(marginleft<=50){
+    while(marginleft<=24){
     marginleft+=2;
     img.style.marginleft=marginleft+"px";
     }
