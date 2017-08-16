@@ -6,15 +6,15 @@ var img=document.getElementById("madi");
 var marginLeft=0;
 function moveright(){
     //img.style.marginleft="0px";
-    if(marginLeft<=10){
-    marginLeft=marginLeft+1;
+    if(marginLeft<=100){
+    marginLeft=marginLeft+5;
     img.style.marginLeft=marginLeft+'px';
     //console.log(img.style.marginleft);
     }
     else{
         marginLeft=0;
         if(marginLeft>=0){
-        marginLeft=marginLeft-1;
+        marginLeft=marginLeft-5;
     img.style.marginRight=marginLeft+'px';
         }
     }
