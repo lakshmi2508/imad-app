@@ -9,13 +9,13 @@ function moveright(){
     if(marginLeft<100){
     marginLeft=marginLeft+5;
     img.style.marginLeft=marginLeft+'px';
-    //console.log(img.style.marginleft);
+    console.log(img.style.marginleft);
     }
     else{
         //marginLeft=img.style.marginLeft;
         if(marginLeft>=0){
         marginLeft=marginLeft-5;
-        alert(marginLeft);
+        console.log(marginLeft);
     img.style.marginLeft=marginLeft+'px';
         }
     }
