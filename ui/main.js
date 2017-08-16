@@ -44,14 +44,15 @@ button.onclick=function(){
   request.send(null);
 };
 
-var nametxt=document.getElementById('name');
-var name=nametxt.value;
+
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
   var request=new XMLHttpRequest();
   request.onreadystatechange=function(){
     if(request.readyState===XMLHttpRequest.DONE){
         if(request.status===200){
+            var nametxt=document.getElementById('name');
+            var name=nametxt.value;
             var names=request.responseText;
             names=JSON.parse(names);
             var list='';
