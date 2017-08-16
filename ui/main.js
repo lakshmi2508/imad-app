@@ -4,14 +4,17 @@ element.innerHTML="New Text";
 
 var img=document.getElementById("madi");
 var marginLeft=0;
+var moved=false;
 function moveright(){
     //img.style.marginleft="0px";
-    if(marginLeft<100){
+    if(marginLeft<100 && moved===false){
+        moved=false;
     marginLeft=marginLeft+5;
     img.style.marginLeft=marginLeft+'px';
     console.log(img.style.marginleft);
     }
     else{
+        moved=true;
         //marginLeft=img.style.marginLeft;
         if(marginLeft>=0){
         marginLeft=marginLeft-5;
