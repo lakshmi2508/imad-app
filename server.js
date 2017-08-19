@@ -92,7 +92,7 @@ app.get('/submit-name',function(req,res){
   res.send(createTemplate(articles[articleName]));
 });*/
 app.get('/articles/:articleName',function(req,res){
-    pool.query("SELECT * from article_webapp where name='"+req.params.articleName,function(err,result){
+    pool.query("SELECT * from article_webapp where name='"+req.params.articleName+"'",function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } 
