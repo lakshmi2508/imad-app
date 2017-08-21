@@ -94,7 +94,34 @@ app.post("/create-user",function(req,res){
    });
 });
 
-
+app.post("/login",function(req,res){
+    var username=req.body.username;
+   var password=req.body.password;
+   
+   pool.query('SELECT * FROM  "user" WHERE username=$1',[username],function(err,result){
+       if(err){
+           res.status(500).send(err.toString());
+       }
+       else{
+           if(result.rows.length===0){
+               res.status(404).send("Invalid username");
+           }
+           else{
+               var dbString=result.rows[0].password;
+               var salt=dbString.split('$')[2];
+               var newpassword=hash(password,salt);
+               if(newpassword===dbString){
+                   res.send("Login done!");
+                   
+               }
+               else{
+                   res.status(404).send("Invalid password");
+               }
+           }
+           res.send("User added");
+       }
+   });
+});
 app.get("/counter", function(req,res){
   counter+=1;
   res.send(counter.toString());
