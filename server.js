@@ -4,6 +4,7 @@ var path = require('path');
 var Pool=require('pg').Pool;
 var crypto=require('crypto');
 var bodyParser=require('body-parser');
+var session=require("express-session");
 
 
 var config={
@@ -17,6 +18,11 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+    secret:'secret',
+    cookie:{maxAge:1000*60*60*24*30}
+}));
+
 
 /*var articles={
     'article-one':{
@@ -111,6 +117,7 @@ app.post("/login",function(req,res){
                var salt=dbString.split('$')[2];
                var newpassword=hash(password,salt);
                if(newpassword===dbString){
+                   req.session.auth={userId:result.rows[0].id};
                    res.send("Login done!");
                    
                }
@@ -121,6 +128,15 @@ app.post("/login",function(req,res){
            res.send("User added");
        }
    });
+});
+
+app.get('/checklogin',function(req,res){
+   if(req.session && req.session.auth && req.session.auth.userId){
+       res.send("You are logged in "+req.session.auth.userId.toString());
+   } 
+   else{
+       res.send("You are not logged in");
+   }
 });
 app.get("/counter", function(req,res){
   counter+=1;
