@@ -104,7 +104,7 @@ app.post("/create-user",function(req,res){
 app.post("/login",function(req,res){
     var username=req.body.username;
    var password=req.body.password;
-   
+   console.log(username);
    pool.query('SELECT * FROM  "user" WHERE username=$1',[username],function(err,result){
        if(err){
            res.status(500).send(err.toString());
@@ -119,7 +119,7 @@ app.post("/login",function(req,res){
                var newpassword=hash(password,salt);
                if(newpassword===dbString){
                    //req.session.auth={userId: result.rows[0].id};
-                   alert(result.rows[0].id.toString());
+                   //alert(result.rows[0].id.toString());
                    res.send("Login done!");
                    
                }
