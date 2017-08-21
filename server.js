@@ -134,6 +134,7 @@ app.post("/login",function(req,res){
 
 app.get('/checklogin',function(req,res){
    if(req.session && req.session.auth && req.session.auth.userId){
+       alert("session is there");
        res.send("You are logged in "+req.session.auth.userId.toString());
    } 
    else{
