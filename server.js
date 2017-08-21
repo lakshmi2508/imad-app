@@ -18,12 +18,11 @@ var config={
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-/*app.use(session({
-    secret:'someRandomSecretValue',
-    resave:false,
-    saveUninitialized:true,
+app.use(session({
+    secret: 'someRandomSecretValue',
+    saveUninitialized: false,
     cookie:{maxAge:1000 * 60 * 60 * 24 *30}
-}));*/
+}));
 
 
 /*var articles={
