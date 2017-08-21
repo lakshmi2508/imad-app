@@ -94,6 +94,6 @@ submit.onclick=function(){
   request.setRequestHeader('Content-Type','application/json');
   console.log(username);
   console.log(password);
-  console.log('data length: ' + Buffer.byteLength(JSON.stringify(send)))
+  //console.log('data length: ' + Buffer.byteLength(JSON.stringify(send)))
   request.send(JSON.stringify({username:username,password:password}));
 };
