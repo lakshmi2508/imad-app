@@ -92,6 +92,7 @@ submit.onclick=function(){
 
   request.open('POST','http://lakshmi2508.imad.hasura-app.io/login',true);
   request.setRequestHeader('Content-Type','application/json');
-  
+  console.log(username);
+  console.log(password);
   request.send(JSON.stringify({username:username,password:password}));
 };
