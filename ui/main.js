@@ -26,7 +26,7 @@ function moveright(){
 img.onclick=function(){
 var interval=setInterval(moveright,100);
 };*/
-var button=document.getElementById('counter');
+/*var button=document.getElementById('counter');
 //var counter=0;
 button.onclick=function(){
     var request=new XMLHttpRequest();
@@ -67,4 +67,31 @@ submit.onclick=function(){
             var name=nametxt.value;
   request.open('GET','http://lakshmi2508.imad.hasura-app.io/submit-name?name='+name,true);
   request.send(null);
+};*/
+
+var submit=document.getElementById('submit_btn');
+submit.onclick=function(){
+  var request=new XMLHttpRequest();
+  request.onreadystatechange=function(){
+    if(request.readyState===XMLHttpRequest.DONE){
+        if(request.status===200){
+           alert("Login successful!"); 
+           
+        }
+        else if(request.status===404){
+            alert("Username/password invalid");
+            
+        }
+        else if(request.status==500){
+            alert("Server error");
+        }
+    }  
+  };
+  var username=document.getElementById("username").value;
+  var password=document.getElementById("password").value;
+
+  request.open('POST','http://lakshmi2508.imad.hasura-app.io/login',true);
+  request.setRequestHeader('Content-Type','application/json');
+  
+  request.send(JSOB.stringify({username:username,password:password}));
 };
