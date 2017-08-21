@@ -16,15 +16,14 @@ var config={
 };
 
 var app = express();
-app.use(session({
+app.use(morgan('combined'));
+app.use(bodyParser.json());
+/*app.use(session({
     secret: 'someRandomSecretValue',
     saveUninitialized: true,
     resave: false,
     cookie:{maxAge:1000 * 60 * 60 * 24 *30}
-}));
-app.use(morgan('combined'));
-app.use(bodyParser.json());
-
+}));*/
 
 
 /*var articles={
@@ -121,7 +120,7 @@ app.post("/login",function(req,res){
                var newpassword=hash(password,salt);
                if(newpassword===dbString){
                    //req.session.auth={userId: result.rows[0].id};
-                   //alert(result.rows[0].id.toString());
+                   alert(result.rows[0].id.toString());
                    res.send("Login done!");
                    
                }
