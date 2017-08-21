@@ -140,6 +140,12 @@ app.get('/checklogin',function(req,res){
        res.send("You are not logged in");
    }
 });
+
+app.get("/logout",function(req,res){
+   delete req.session.auth;
+   res.send("Logged out");
+});
+
 app.get("/counter", function(req,res){
   counter+=1;
   res.send(counter.toString());
