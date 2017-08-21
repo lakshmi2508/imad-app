@@ -121,6 +121,7 @@ app.post("/login",function(req,res){
                if(newpassword===dbString){
                    //req.session.auth={userId: result.rows[0].id};
                    //alert(result.rows[0].id.toString());
+                   req.session.auth=result.rows[0].id.toString();
                    res.send("Login done!$"+result.rows[0].id);
                    
                }
