@@ -119,9 +119,9 @@ app.post("/login",function(req,res){
                var salt=dbString.split('$')[2];
                var newpassword=hash(password,salt);
                if(newpassword===dbString){
-                   //req.session.auth={userId: result.rows[0].id};
+                   req.session.auth={userId: result.rows[0].id};
                    //alert(result.rows[0].id.toString());
-                   req.session.auth=result.rows[0].id.toString();
+                   //req.session.auth=result.rows[0].id.toString();
                    res.send("Login done!$"+result.rows[0].id);
                    
                }
